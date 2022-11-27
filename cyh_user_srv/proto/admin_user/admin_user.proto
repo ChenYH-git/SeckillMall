@@ -1,0 +1,43 @@
+syntax = 'proto3';
+option go_package="./;cyh_user_srv";
+package cyh_user_srv;
+
+
+service AdminUser {
+  rpc AdminUserLogin(AdminUserRequest) returns (AdminUserResponse){}
+  rpc FrontUserList(FrontUsersRequest) returns (FrontUsersResponse){}
+}
+
+message FrontUsersRequest {
+  int32 current_page = 1;
+  int32 page_size = 2;
+}
+
+message User {
+  string email = 1;
+  string desc = 2;
+  string status = 3;
+  string create_time = 4;
+}
+
+message FrontUsersResponse {
+  int32 code = 1;
+  int32 total = 2;
+  int32 current_page = 3;
+  int32 page_size = 4;
+  string msg = 5;
+  repeated User front_users = 6;
+}
+
+
+
+message AdminUserRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message AdminUserResponse {
+  int32 code = 1;
+  string msg = 2;
+  string user_name = 3;
+}

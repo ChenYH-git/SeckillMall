@@ -1,0 +1,8 @@
+{
+  "host":"localhost",
+  "port":"3306",
+  "user_name":"root",
+  "password":"chenyuhan123000",
+  "database":"cyh_micro_seckill",
+  "logo_mode":true
+}
